@@ -14,6 +14,8 @@ const translations: Record<Locale, NestedStrings> = {
       experience: 'Experience',
       projects: 'Projects',
       blog: 'Blog',
+      skills: 'Skills',
+      education: 'Education',
       contact: 'Contact',
     },
     hero: {
@@ -172,6 +174,8 @@ const translations: Record<Locale, NestedStrings> = {
       experience: 'Experiência',
       projects: 'Projetos',
       blog: 'Blog',
+      skills: 'Habilidades',
+      education: 'Educação',
       contact: 'Contato',
     },
     hero: {

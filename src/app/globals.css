@@ -2,16 +2,17 @@
 
 @theme inline {
   --color-bg: #0a0a0a;
-  --color-bg-secondary: #111111;
-  --color-bg-card: #1a1a1a;
+  --color-bg-secondary: #0f0f0f;
+  --color-bg-card: #141414;
   --color-text: #e5e5e5;
   --color-text-secondary: #c4c4c4;
   --color-text-muted: #a0a0a0;
-  --color-accent: #60a5fa;
-  --color-accent-hover: #93bbfd;
+  --color-accent: #10b981;
+  --color-accent-hover: #34d399;
+  --color-accent-blue: #3b82f6;
   --color-accent-purple: #a78bfa;
-  --color-border: #262626;
-  --color-border-hover: #404040;
+  --color-border: #1f1f1f;
+  --color-border-hover: #333333;
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
 }
@@ -22,16 +23,17 @@ html {
 }
 
 body {
-  background: var(--color-bg);
+  background: #0a0a0a;
   color: var(--color-text);
   font-family: var(--font-sans), system-ui, sans-serif;
   background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
   background-size: 32px 32px;
+  background-attachment: fixed;
 }
 
 ::selection {
-  background: var(--color-accent);
-  color: var(--color-bg);
+  background: #10b981;
+  color: #0a0a0a;
 }
 
 ::-webkit-scrollbar {
@@ -39,24 +41,18 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg);
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border-hover);
+  background: #333;
   border-radius: 3px;
 }
 
 /* ── Entrance animations ── */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes bounceY {
@@ -81,21 +77,47 @@ body {
   animation: bounceY 1.6s ease-in-out infinite;
 }
 
-/* ── Section heading accent bar ── */
+/* ── Section heading — Brittany Chiang style ── */
 .section-heading {
-  position: relative;
-  padding-top: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  color: #e5e5e5;
+  white-space: nowrap;
 }
 
 .section-heading::before {
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: inline-block;
   width: 2.5rem;
-  height: 3px;
-  background: var(--color-accent);
+  height: 2px;
+  background: #10b981;
   border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.section-heading::after {
+  content: '';
+  display: block;
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(31,31,31,1), transparent);
+  min-width: 2rem;
+}
+
+/* ── Glass card ── */
+.glass-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 1rem;
+}
+
+.glass-card:hover {
+  border-color: rgba(16,185,129,0.3);
+  box-shadow: 0 0 30px rgba(16,185,129,0.08);
 }
 
 /* ── Stat card hover ── */
@@ -105,6 +127,86 @@ body {
 
 .stat-card:hover {
   transform: translateY(-4px);
-  border-color: var(--color-accent);
-  box-shadow: 0 0 20px rgba(96, 165, 250, 0.15);
+  border-color: rgba(16,185,129,0.4);
+  box-shadow: 0 0 20px rgba(16,185,129,0.15);
+}
+
+/* ── Skill tag hover ── */
+.skill-tag {
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.skill-tag:hover {
+  border-color: rgba(16,185,129,0.6);
+  color: #10b981;
+  box-shadow: 0 0 12px rgba(16,185,129,0.15);
+  transform: translateY(-1px);
+}
+
+/* ── Timeline line glow ── */
+.timeline-line {
+  background: linear-gradient(to bottom, #10b981, rgba(16,185,129,0.1));
+}
+
+/* ── Nav underline animation ── */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #10b981;
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ── Project card gradient border on hover ── */
+.project-card {
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+/* ── Floating label inputs ── */
+.floating-group {
+  position: relative;
+}
+
+.floating-group input,
+.floating-group textarea {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #e5e5e5;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.floating-group input:focus,
+.floating-group textarea:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16,185,129,0.1);
+}
+
+.floating-group input::placeholder,
+.floating-group textarea::placeholder {
+  color: #6b7280;
 }
