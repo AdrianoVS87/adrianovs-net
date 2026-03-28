@@ -8,236 +8,198 @@ import { motion } from 'framer-motion';
 const ROLES = [
   'Senior Java Engineer',
   'Agentic Full Stack Developer',
-  'AI Agent Builder',
-  'Government Systems Architect',
+  'AI Agent Architect',
+  'Government Systems Engineer',
 ];
 
-function GitHubIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-    </svg>
-  );
-}
-
-function LinkedInIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-    </svg>
-  );
-}
-
-function UpworkIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-      <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z" />
-    </svg>
-  );
-}
-
-function EmailIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2">
-      <rect x="2" y="4" width="20" height="16" rx="2" />
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-    </svg>
-  );
-}
-
-function ChevronDownIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M6 9l6 6 6-6" />
-    </svg>
-  );
-}
-
-export default function Hero() {
-  const { t } = useI18n();
+function TypingAnimation() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const [showCursor, setShowCursor] = useState(true);
+
+  // Blinking cursor
+  useEffect(() => {
+    const cursorInterval = setInterval(() => setShowCursor(prev => !prev), 500);
+    return () => clearInterval(cursorInterval);
+  }, []);
 
   useEffect(() => {
     const currentRole = ROLES[roleIndex];
     let timeout: ReturnType<typeof setTimeout>;
 
     if (!isDeleting && displayText === currentRole) {
-      // Pause before deleting
       timeout = setTimeout(() => setIsDeleting(true), 2000);
     } else if (isDeleting && displayText === '') {
-      // Move to next role
       setIsDeleting(false);
       setRoleIndex((prev) => (prev + 1) % ROLES.length);
     } else if (isDeleting) {
-      timeout = setTimeout(() => setDisplayText(currentRole.slice(0, displayText.length - 1)), 50);
+      timeout = setTimeout(() => setDisplayText(currentRole.slice(0, displayText.length - 1)), 30);
     } else {
-      timeout = setTimeout(() => setDisplayText(currentRole.slice(0, displayText.length + 1)), 80);
+      timeout = setTimeout(() => setDisplayText(currentRole.slice(0, displayText.length + 1)), 50);
     }
 
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, roleIndex]);
 
-  const containerVariants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.1 } },
-  };
+  return (
+    <div className="h-8 flex items-center">
+      <span
+        className="text-lg md:text-xl font-bold"
+        style={{ color: '#00ff41', fontFamily: 'var(--font-jetbrains-mono)' }}
+      >
+        {displayText}
+        <span style={{ opacity: showCursor ? 1 : 0, color: '#00ff41' }}>_</span>
+      </span>
+    </div>
+  );
+}
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 24 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
+export default function Hero() {
+  const { t } = useI18n();
 
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center pt-16"
     >
-      <div className="max-w-6xl mx-auto px-6 py-16 w-full">
-        <div className="flex flex-col-reverse md:flex-row items-center gap-12">
-          {/* Text content */}
+      <div className="max-w-[1100px] mx-auto px-6 py-20 w-full">
+        <div className="flex flex-col-reverse md:flex-row items-center gap-16">
+
+          {/* Left: Text content (60%) */}
           <motion.div
-            className="flex-1 space-y-6"
+            className="flex-1 space-y-5 max-w-[600px]"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            <motion.h1
-              variants={itemVariants}
-              className="text-5xl md:text-7xl font-bold tracking-tight"
-              style={{
-                background: 'linear-gradient(to right, #10b981, #ffffff)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
-            >
-              {t('hero.title')}
-            </motion.h1>
-
-            <motion.div variants={itemVariants} className="h-8">
-              <span
-                className="text-xl md:text-2xl font-mono font-semibold text-emerald-400"
-              >
-                {displayText}
-                <span className="animate-pulse text-emerald-400">|</span>
-              </span>
-            </motion.div>
-
+            {/* "Hi, my name is" */}
             <motion.p
               variants={itemVariants}
-              className="text-2xl md:text-3xl font-medium leading-snug max-w-[550px]"
-              style={{ color: '#f0f0f0' }}
+              className="text-sm font-medium tracking-widest"
+              style={{ color: '#00ff41', fontFamily: 'var(--font-jetbrains-mono)' }}
             >
-              {t('hero.tagline')}
+              Hi, my name is
             </motion.p>
 
+            {/* Name */}
+            <motion.h1
+              variants={itemVariants}
+              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight"
+            >
+              Adriano Viera<br />
+              dos Santos<span style={{ color: '#00ff41' }}>.</span>
+            </motion.h1>
+
+            {/* Tagline */}
             <motion.p
               variants={itemVariants}
-              className="text-base leading-relaxed max-w-[540px]"
-              style={{ color: '#b0b0b0' }}
+              className="text-xl md:text-2xl font-medium leading-snug"
+              style={{ color: '#a1a1aa' }}
+            >
+              I build systems where failure is not an option.
+            </motion.p>
+
+            {/* Typing animation */}
+            <motion.div variants={itemVariants}>
+              <TypingAnimation />
+            </motion.div>
+
+            {/* Description */}
+            <motion.p
+              variants={itemVariants}
+              className="text-base leading-relaxed max-w-[520px]"
+              style={{ color: '#a1a1aa' }}
             >
               {t('hero.current')}
             </motion.p>
 
-            {/* CTA buttons */}
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-3 pt-2">
+            {/* CTAs */}
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-4 pt-2">
               <a
                 href="#projects"
-                className="px-6 py-3 font-semibold rounded-xl transition-all duration-200 hover:-translate-y-0.5"
+                className="px-6 py-2.5 text-sm font-semibold rounded border-2 transition-all duration-200 hover:bg-[#00ff41]/10 hover:-translate-y-0.5"
                 style={{
-                  background: '#10b981',
-                  color: '#0a0a0a',
-                  boxShadow: '0 4px 20px rgba(16,185,129,0.35)',
+                  color: '#00ff41',
+                  borderColor: '#00ff41',
+                  fontFamily: 'var(--font-jetbrains-mono)',
                 }}
               >
                 {t('hero.viewProjects')}
               </a>
               <a
                 href="#contact"
-                className="px-6 py-3 border-2 border-emerald-500 text-emerald-400 rounded-xl font-semibold transition-all duration-200 hover:bg-emerald-500/10 hover:-translate-y-0.5"
+                className="text-sm font-medium transition-all duration-200 hover:text-[#00ff41] flex items-center gap-1"
+                style={{ color: '#a1a1aa' }}
               >
-                {t('hero.contactMe')}
-              </a>
-              <a
-                href="/cv.pdf"
-                className="px-6 py-3 text-gray-400 hover:text-emerald-400 transition-colors duration-200 font-medium flex items-center gap-1"
-              >
-                {t('hero.downloadCV')} →
-              </a>
-            </motion.div>
-
-            {/* Social links */}
-            <motion.div variants={itemVariants} className="flex items-center gap-5 pt-2">
-              <a
-                href="https://github.com/AdrianoVS87"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-gray-100 transition-colors duration-200"
-                aria-label="GitHub"
-              >
-                <GitHubIcon />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/adrianovs87/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-blue-400 transition-colors duration-200"
-                aria-label="LinkedIn"
-              >
-                <LinkedInIcon />
-              </a>
-              <a
-                href="#"
-                className="text-gray-500 hover:text-green-400 transition-colors duration-200"
-                aria-label="Upwork"
-              >
-                <UpworkIcon />
-              </a>
-              <a
-                href="mailto:info@adrianovs.net"
-                className="text-gray-500 hover:text-emerald-400 transition-colors duration-200"
-                aria-label="Email"
-              >
-                <EmailIcon />
+                {t('hero.contactMe')} →
               </a>
             </motion.div>
           </motion.div>
 
-          {/* Profile photo */}
+          {/* Right: Photo (40%) */}
           <motion.div
-            className="flex-shrink-0"
+            className="flex-shrink-0 flex items-center justify-center"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+            transition={{ duration: 0.7, delay: 0.6, ease: 'easeOut' }}
           >
-            <div
-              className="w-60 h-60 md:w-72 md:h-72 rounded-full overflow-hidden ring-2 ring-emerald-500/30 bg-gray-900 transition-all duration-300 hover:scale-105"
-              style={{
-                boxShadow: '0 0 60px rgba(16,185,129,0.2)',
-              }}
-            >
-              <Image
-                src="/images/profile.jpg"
-                alt="Adriano Viera dos Santos"
-                width={288}
-                height={288}
-                className="object-cover w-full h-full"
-                priority
+            {/* Double-ring photo */}
+            <div className="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80">
+              {/* Outer ring */}
+              <div
+                className="absolute inset-0 rounded-full"
+                style={{
+                  border: '1px solid rgba(0,255,65,0.2)',
+                  transform: 'scale(1.08)',
+                }}
               />
+              {/* Inner ring */}
+              <div
+                className="absolute inset-0 rounded-full transition-all duration-300 group-hover:shadow-[0_0_40px_rgba(0,255,65,0.3)]"
+                style={{
+                  border: '2px solid #00ff41',
+                }}
+              />
+              {/* Photo */}
+              <div
+                className="w-full h-full rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(0,255,65,0.25)] cursor-pointer"
+                style={{ border: '2px solid #00ff41' }}
+              >
+                <Image
+                  src="/images/profile.jpg"
+                  alt="Adriano Viera dos Santos"
+                  width={320}
+                  height={320}
+                  className="object-cover w-full h-full"
+                  priority
+                />
+              </div>
             </div>
           </motion.div>
+
         </div>
       </div>
 
       {/* Scroll-down indicator */}
       <a
         href="#about"
-        className="animate-bounce-scroll absolute bottom-8 left-1/2 text-gray-500 hover:text-emerald-400 transition-colors"
+        className="animate-bounce-scroll absolute bottom-8 left-1/2 text-zinc-600 hover:text-[#00ff41] transition-colors"
         aria-label="Scroll down"
       >
-        <ChevronDownIcon />
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M6 9l6 6 6-6" />
+        </svg>
       </a>
     </section>
   );
