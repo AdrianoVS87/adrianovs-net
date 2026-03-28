@@ -39,7 +39,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-12">{t('projects.title')}</h2>
+        <h2 className="text-3xl font-bold mb-12 section-heading">{t('projects.title')}</h2>
 
         <div className="grid gap-6">
           {projects.map(({ key, github, live }) => {

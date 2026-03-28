@@ -17,7 +17,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 bg-bg-secondary">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-12">{t('skills.title')}</h2>
+        <h2 className="text-3xl font-bold mb-12 section-heading">{t('skills.title')}</h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map(({ key, skills }) => (

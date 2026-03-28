@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useI18n } from '@/lib/i18n';
 
 const sections = ['home', 'about', 'experience', 'projects', 'blog', 'contact'] as const;
@@ -8,9 +8,22 @@ const sections = ['home', 'about', 'experience', 'projects', 'blog', 'contact'] 
 export default function Navigation() {
   const { locale, setLocale, t } = useI18n();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-md border-b border-border">
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-border transition-all duration-300"
+      style={{
+        background: scrolled ? 'rgba(10,10,10,0.92)' : 'rgba(10,10,10,0.7)',
+        borderBottomColor: scrolled ? 'rgba(38,38,38,0.8)' : 'rgba(38,38,38,0.4)',
+      }}
+    >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#home" className="text-lg font-semibold text-text hover:text-accent transition-colors">
           adrianovs.net
@@ -61,7 +74,7 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-bg/95 backdrop-blur-md border-b border-border px-6 py-4">
+        <div className="md:hidden bg-bg/95 backdrop-blur-xl border-b border-border px-6 py-4">
           {sections.map((section) => (
             <a
               key={section}

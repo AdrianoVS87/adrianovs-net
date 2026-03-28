@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 bg-bg-secondary">
       <div className="max-w-2xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-4">{t('contact.title')}</h2>
+        <h2 className="text-3xl font-bold mb-4 section-heading">{t('contact.title')}</h2>
         <p className="text-text-secondary mb-8">{t('contact.subtitle')}</p>
 
         <form

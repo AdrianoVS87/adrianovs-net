@@ -36,49 +36,85 @@ function EmailIcon() {
   );
 }
 
+function ChevronDownIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M6 9l6 6 6-6" />
+    </svg>
+  );
+}
+
 export default function Hero() {
   const { t } = useI18n();
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-16">
-      <div className="max-w-6xl mx-auto px-6 py-20 w-full">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center pt-16"
+      style={{
+        background: `
+          radial-gradient(ellipse at 80% 50%, rgba(99,102,241,0.08) 0%, transparent 60%),
+          radial-gradient(ellipse at 20% 80%, rgba(99,102,241,0.04) 0%, transparent 50%)
+        `,
+      }}
+    >
+      <div className="max-w-6xl mx-auto px-6 py-16 w-full">
         <div className="flex flex-col-reverse md:flex-row items-center gap-12">
+          {/* Text content */}
           <div className="flex-1 space-y-6">
-            <h1 className="text-4xl md:text-5xl font-bold text-text tracking-tight">
+            <h1
+              className="animate-fade-in-up delay-100 text-4xl md:text-5xl font-bold text-text tracking-tight"
+            >
               {t('hero.title')}
             </h1>
-            <p className="text-lg text-accent font-medium">
+
+            <p className="animate-fade-in-up delay-200 text-lg text-accent font-medium">
               {t('hero.subtitle')}
             </p>
-            <p className="text-text-secondary text-lg leading-relaxed">
+
+            <p
+              className="animate-fade-in-up delay-300 text-2xl md:text-3xl font-medium leading-snug"
+              style={{ color: '#f0f0f0', maxWidth: '550px' }}
+            >
               {t('hero.tagline')}
             </p>
-            <p className="text-text-muted text-base">
+
+            <p
+              className="animate-fade-in-up delay-400 text-base leading-relaxed"
+              style={{ color: '#b0b0b0' }}
+            >
               {t('hero.current')}
             </p>
 
-            <div className="flex flex-wrap gap-3 pt-2">
+            {/* CTA buttons — hierarchy: primary / secondary / ghost */}
+            <div className="animate-fade-in-up delay-500 flex flex-wrap gap-3 pt-2">
               <a
                 href="#projects"
-                className="px-5 py-2.5 bg-accent text-bg font-medium rounded-lg hover:bg-accent-hover transition-colors"
+                className="px-5 py-2.5 font-medium rounded-lg transition-all"
+                style={{
+                  background: 'linear-gradient(135deg, #60a5fa, #4ade80)',
+                  color: '#0a0a0a',
+                  boxShadow: '0 4px 15px rgba(96,165,250,0.3)',
+                }}
               >
                 {t('hero.viewProjects')}
               </a>
               <a
                 href="#contact"
-                className="px-5 py-2.5 border border-border text-text-secondary rounded-lg hover:border-accent hover:text-accent transition-colors"
+                className="px-5 py-2.5 border border-accent text-accent rounded-lg hover:bg-accent/10 transition-colors font-medium"
               >
                 {t('hero.contactMe')}
               </a>
               <a
                 href="/cv.pdf"
-                className="px-5 py-2.5 border border-border text-text-secondary rounded-lg hover:border-accent hover:text-accent transition-colors"
+                className="px-5 py-2.5 text-text-muted hover:text-accent transition-colors font-medium flex items-center gap-1"
               >
-                {t('hero.downloadCV')}
+                {t('hero.downloadCV')} →
               </a>
             </div>
 
-            <div className="flex items-center gap-5 pt-2">
+            {/* Social links */}
+            <div className="animate-fade-in-up delay-600 flex items-center gap-5 pt-2">
               <a href="https://github.com/AdrianoVS87" target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-accent transition-colors" aria-label="GitHub">
                 <GitHubIcon />
               </a>
@@ -94,13 +130,22 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="flex-shrink-0">
-            <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-2 border-border bg-bg-card">
+          {/* Profile photo */}
+          <div className="animate-fade-in-up delay-700 flex-shrink-0">
+            <div
+              className="w-60 h-60 md:w-72 md:h-72 rounded-full overflow-hidden ring-2 bg-bg-card"
+              style={{
+                boxShadow: '0 0 60px rgba(74,158,255,0.15)',
+                borderWidth: '2px',
+                borderColor: 'rgba(96,165,250,0.3)',
+                borderStyle: 'solid',
+              }}
+            >
               <Image
                 src="/images/profile.jpg"
                 alt="Adriano Viera dos Santos"
-                width={256}
-                height={256}
+                width={288}
+                height={288}
                 className="object-cover w-full h-full"
                 priority
               />
@@ -108,6 +153,15 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Scroll-down indicator */}
+      <a
+        href="#about"
+        className="animate-bounce-scroll absolute bottom-8 left-1/2 text-text-muted hover:text-accent transition-colors"
+        aria-label="Scroll down"
+      >
+        <ChevronDownIcon />
+      </a>
     </section>
   );
 }

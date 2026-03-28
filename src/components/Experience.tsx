@@ -14,7 +14,7 @@ export default function Experience() {
   return (
     <section id="experience" className="py-24 bg-bg-secondary">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-12">{t('experience.title')}</h2>
+        <h2 className="text-3xl font-bold mb-12 section-heading">{t('experience.title')}</h2>
 
         <div className="relative border-l border-border pl-8 space-y-12">
           {jobs.map(({ key, bullets }) => {
