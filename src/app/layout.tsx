@@ -87,8 +87,21 @@ export default function RootLayout({
             }),
           }}
         />
+        {/* Mouse spotlight: update CSS custom properties on mousemove */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (typeof window !== 'undefined') {
+                document.addEventListener('mousemove', function(e) {
+                  document.body.style.setProperty('--mouse-x', e.clientX + 'px');
+                  document.body.style.setProperty('--mouse-y', e.clientY + 'px');
+                });
+              }
+            `,
+          }}
+        />
       </head>
-      <body className="min-h-screen">{children}</body>
+      <body className="min-h-screen relative">{children}</body>
     </html>
   );
 }
