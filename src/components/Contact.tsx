@@ -80,7 +80,7 @@ export default function Contact() {
           animate={inView ? 'visible' : 'hidden'}
         >
           <motion.h2 variants={itemVariants} className="section-heading mb-12">
-            <span className="text-gray-500 font-mono text-lg">07.</span> {t('contact.title')}
+            <span className="text-gray-500 font-mono text-lg">06.</span> {t('contact.title')}
           </motion.h2>
 
           <div className="grid md:grid-cols-2 gap-12">

@@ -38,7 +38,7 @@ export default function Skills() {
           animate={inView ? 'visible' : 'hidden'}
         >
           <motion.h2 variants={itemVariants} className="section-heading mb-12">
-            <span className="text-gray-500 font-mono text-lg">05.</span> {t('skills.title')}
+            <span className="text-gray-500 font-mono text-lg">04.</span> {t('skills.title')}
           </motion.h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">

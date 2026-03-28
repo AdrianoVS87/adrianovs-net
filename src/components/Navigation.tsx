@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useI18n } from '@/lib/i18n';
 
-const sections = ['home', 'about', 'experience', 'projects', 'skills', 'education', 'contact'] as const;
+const sections = ['home', 'about', 'experience', 'projects', 'skills', 'education', 'contact', 'blog'] as const;
 
 export default function Navigation() {
   const { locale, setLocale, t } = useI18n();
@@ -79,12 +79,6 @@ export default function Navigation() {
               {t(`nav.${section}`)}
             </a>
           ))}
-          <a
-            href="/blog"
-            className="nav-link text-sm font-medium text-gray-400 hover:text-gray-100 transition-colors duration-200"
-          >
-            {t('nav.blog')}
-          </a>
           <button
             onClick={() => setLocale(locale === 'en' ? 'pt' : 'en')}
             className="text-xs font-mono text-gray-500 hover:text-emerald-400 transition-colors duration-200 border border-white/10 rounded-md px-2.5 py-1"
@@ -140,13 +134,6 @@ export default function Navigation() {
               {t(`nav.${section}`)}
             </a>
           ))}
-          <a
-            href="/blog"
-            onClick={() => setMobileOpen(false)}
-            className="block py-2.5 text-sm font-medium text-gray-400 hover:text-gray-100 transition-colors duration-200"
-          >
-            {t('nav.blog')}
-          </a>
         </div>
       </div>
     </nav>

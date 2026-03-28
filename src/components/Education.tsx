@@ -37,7 +37,7 @@ export default function Education() {
           animate={inView ? 'visible' : 'hidden'}
         >
           <motion.h2 variants={itemVariants} className="section-heading mb-12">
-            <span className="text-gray-500 font-mono text-lg">06.</span> {t('education.title')}
+            <span className="text-gray-500 font-mono text-lg">05.</span> {t('education.title')}
           </motion.h2>
 
           {/* Horizontal card layout on desktop */}

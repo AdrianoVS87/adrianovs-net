@@ -63,7 +63,7 @@ export default function Projects() {
           animate={inView ? 'visible' : 'hidden'}
         >
           <motion.h2 variants={itemVariants} className="section-heading mb-12">
-            <span className="text-gray-500 font-mono text-lg">04.</span> {t('projects.title')}
+            <span className="text-gray-500 font-mono text-lg">03.</span> {t('projects.title')}
           </motion.h2>
 
           {/* Featured project — hookwatch */}
