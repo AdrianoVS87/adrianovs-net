@@ -97,7 +97,7 @@ export default function Hero() {
           <div className="flex-shrink-0">
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-2 border-border bg-bg-card">
               <Image
-                src="/images/profile.png"
+                src="/images/profile.jpg"
                 alt="Adriano Viera dos Santos"
                 width={256}
                 height={256}
