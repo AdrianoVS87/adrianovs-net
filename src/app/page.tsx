@@ -2,6 +2,7 @@
 
 import { I18nProvider } from '@/lib/i18n';
 import Navigation from '@/components/Navigation';
+import { LeftSidebar, RightSidebar } from '@/components/FloatingSidebar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Experience from '@/components/Experience';
@@ -15,7 +16,9 @@ export default function Home() {
   return (
     <I18nProvider>
       <Navigation />
-      <main>
+      <LeftSidebar />
+      <RightSidebar />
+      <main className="relative z-10">
         <Hero />
         <About />
         <Experience />
