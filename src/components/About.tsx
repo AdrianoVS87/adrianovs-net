@@ -13,11 +13,9 @@ interface StatItem {
 
 const statItems: StatItem[] = [
   { value: '4+', numericTarget: 4, suffix: '+', label: 'Years Java' },
-  { value: '50+', numericTarget: 50, suffix: '+', label: 'Facilities' },
-  { value: '4+', numericTarget: 4, suffix: '+', label: 'Years AI/ML' },
-  { value: '3x', numericTarget: 3, suffix: 'x', label: 'NASA' },
-  { value: '150K+', numericTarget: 150, suffix: 'K+', label: 'Selected' },
-  { value: '20+', numericTarget: 20, suffix: '+', label: 'Reports' },
+  { value: '50+', numericTarget: 50, suffix: '+', label: 'Prison Facilities' },
+  { value: '4+', numericTarget: 4, suffix: '+', label: 'Years Search Eval' },
+  { value: '100+', numericTarget: 100, suffix: '+', label: 'Tests (Nexus)' },
 ];
 
 function AnimatedCounter({ target, suffix, inView }: { target: number; suffix: string; inView: boolean }) {
