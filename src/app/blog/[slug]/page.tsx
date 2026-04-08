@@ -6,6 +6,49 @@ interface Props {
 }
 
 const postsContent: Record<string, { title: string; date: string; content: string }> = {
+  'building-nexus': {
+    title: 'Building Nexus: Event-Driven Microservices with Saga Orchestration',
+    date: '2026-04-08',
+    content: `
+## Why Event-Driven Architecture for E-Commerce
+
+Traditional monolithic e-commerce systems break under load. A single checkout operation touches inventory, payment, shipping, and notifications — and if any one step fails mid-transaction, you end up with inconsistent state and angry customers.
+
+Event-driven architecture solves this by decoupling services through asynchronous messages. Each service owns its slice of truth, reacts to events, and emits its own. The result: independent scalability, resilience to partial failures, and a clear audit trail of everything that happened.
+
+Nexus is my production-grade implementation of this pattern — 7 Maven modules, 53 commits, and a system that handles the full e-commerce lifecycle end-to-end.
+
+## The Saga Pattern: Orchestration Over Choreography
+
+Nexus uses the orchestration variant of Saga rather than choreography. In choreography, each service listens for events and knows what to do next — but this distributes business logic across every service, making the overall flow invisible and hard to reason about.
+
+With orchestration, a central Saga coordinator drives the workflow: place order → request payment → reserve inventory → confirm order → dispatch shipping. If payment fails, the coordinator explicitly triggers compensating transactions to roll back the state. The business process lives in one place, and failures are handled deterministically.
+
+## CQRS with Redis Read Model
+
+Nexus separates reads from writes using CQRS. Write operations go through Spring Boot command handlers that emit domain events to Kafka. A separate query service consumes those events and maintains a Redis read model optimised for fast lookups.
+
+This means the order list endpoint never touches the write database — it reads a pre-built projection from Redis, keeping query latency under 5ms even under load. The trade-off is eventual consistency, which is acceptable for most read views in e-commerce.
+
+## Order Lifecycle as a State Machine
+
+Every order moves through a strict state machine: PENDING → PAYMENT_REQUESTED → PAYMENT_CONFIRMED → INVENTORY_RESERVED → CONFIRMED → SHIPPED → DELIVERED (or CANCELLED at failure points). Invalid state transitions are rejected at the domain level, not just the API layer.
+
+Real-time status is pushed to clients via WebSocket — the frontend React app receives CONFIRMED, SHIPPED, and DELIVERED events without polling.
+
+## Custom Micrometer Metrics and Grafana Dashboards
+
+Nexus instruments every Saga step with custom Micrometer counters and timers, exposed via Prometheus and visualised in Grafana. I track saga completion rates, compensation event frequency, Kafka consumer lag, and per-service p95 latency. When a dead letter queue starts filling up, the dashboard shows it immediately.
+
+## What I Learned
+
+Distributed transactions are harder than they look — but the Saga pattern makes them manageable when you commit to explicit compensation logic from day one. The biggest lesson: design for failure first, not as an afterthought. Dead letter queues, idempotency keys, and compensating transactions aren't optional extras — they're the core of any reliable event-driven system.
+
+---
+
+*Nexus is open source. Check it out on [GitHub](https://github.com/AdrianoVS87/nexus).*
+    `.trim(),
+  },
   'building-hookwatch': {
     title: 'Building hookwatch: AI Agent Observability with Spring Boot',
     date: '2025-03-15',

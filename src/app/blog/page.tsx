@@ -15,6 +15,13 @@ interface BlogPost {
 
 const posts: BlogPost[] = [
   {
+    slug: 'building-nexus',
+    title: 'Building Nexus: Event-Driven Microservices with Saga Orchestration',
+    date: '2026-04-08',
+    excerpt:
+      'How I built a production-grade event-driven e-commerce platform with Saga orchestration, CQRS, Kafka, and real-time WebSocket order tracking — and what I learned about distributed systems failures.',
+  },
+  {
     slug: 'building-hookwatch',
     title: 'Building hookwatch: AI Agent Observability with Spring Boot',
     date: '2025-03-15',

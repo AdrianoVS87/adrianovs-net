@@ -35,7 +35,7 @@ export default function Contact() {
             className="text-sm mb-4"
             style={{ color: '#00ff41', fontFamily: 'var(--font-jetbrains-mono)' }}
           >
-            05. What&apos;s Next?
+            06. What&apos;s Next?
           </motion.p>
 
           {/* Heading */}

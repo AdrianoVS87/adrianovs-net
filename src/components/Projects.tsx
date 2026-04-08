@@ -5,7 +5,8 @@ import { motion, useInView } from 'framer-motion';
 import { useI18n } from '@/lib/i18n';
 
 const projects = [
-  { key: 'hookwatch', github: 'https://github.com/AdrianoVS87/hookwatch', live: 'https://hookwatch-one.vercel.app', featured: true },
+  { key: 'nexus', github: 'https://github.com/AdrianoVS87/nexus', live: null, featured: true },
+  { key: 'hookwatch', github: 'https://github.com/AdrianoVS87/hookwatch', live: 'https://hookwatch-one.vercel.app', featured: false },
   { key: 'safeOutdoor', github: null, live: 'https://safe-outdoor-app.vercel.app/', featured: false },
   { key: 'ipen', github: null, live: null, featured: false },
   { key: 'cba', github: null, live: null, featured: false },
@@ -58,7 +59,7 @@ function BrowserMockup() {
             border: '1px solid rgba(255,255,255,0.06)',
           }}
         >
-          hookwatch-one.vercel.app
+          localhost:8080/swagger-ui.html
         </div>
       </div>
 
@@ -66,16 +67,16 @@ function BrowserMockup() {
       <div className="p-4 font-mono text-xs space-y-2 flex-1">
         <div className="flex items-center gap-2 mb-3">
           <div className="w-2 h-2 rounded-full bg-[#00ff41] animate-pulse" />
-          <span style={{ color: '#00ff41' }}>hookwatch</span>
-          <span style={{ color: '#6e7681' }}>— observability platform</span>
+          <span style={{ color: '#00ff41' }}>nexus</span>
+          <span style={{ color: '#6e7681' }}>— order-service</span>
         </div>
         <div className="space-y-1.5">
-          <p><span style={{ color: '#00ff41' }}>$</span> <span style={{ color: '#c9d1d9' }}>POST /api/traces</span></p>
-          <p style={{ color: '#6e7681' }}>  {'{'}  agent: &quot;claude-sonnet&quot;, tokens: 1842  {'}'}</p>
-          <p><span style={{ color: '#58a6ff' }}>✓</span> <span style={{ color: '#8b949e' }}>Trace ingested · 3ms</span></p>
-          <p><span style={{ color: '#00ff41' }}>$</span> <span style={{ color: '#c9d1d9' }}>GET /api/dashboard</span></p>
-          <p style={{ color: '#6e7681' }}>  agents: 12 active · cost: $0.024</p>
-          <p><span style={{ color: '#d29922' }}>◆</span> <span style={{ color: '#8b949e' }}>WebSocket connected</span></p>
+          <p><span style={{ color: '#00ff41' }}>$</span> <span style={{ color: '#c9d1d9' }}>POST /api/v1/orders</span></p>
+          <p style={{ color: '#6e7681' }}>  {'{'}  userId: &quot;550e...&quot;, items: [{'{'}...{'}'}]  {'}'}</p>
+          <p><span style={{ color: '#58a6ff' }}>✓</span> <span style={{ color: '#8b949e' }}>Order created · PAYMENT_REQUESTED · 4ms</span></p>
+          <p><span style={{ color: '#00ff41' }}>$</span> <span style={{ color: '#c9d1d9' }}>PaymentCompleted → InventoryReserved</span></p>
+          <p style={{ color: '#6e7681' }}>  Saga confirmed · orderId: d290f1ee</p>
+          <p><span style={{ color: '#d29922' }}>◆</span> <span style={{ color: '#8b949e' }}>WebSocket: CONFIRMED broadcast</span></p>
         </div>
       </div>
     </div>
@@ -186,26 +187,30 @@ export default function Projects() {
                     </p>
 
                     <div className="flex gap-5">
-                      <a
-                        href={featured.github!}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm font-medium transition-colors duration-200 hover:text-[#00ff41]"
-                        style={{ color: '#a1a1aa' }}
-                      >
-                        <GitHubIcon />
-                        {t('projects.viewGithub')}
-                      </a>
-                      <a
-                        href={featured.live!}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm font-medium transition-colors duration-200 hover:text-[#00ff41]"
-                        style={{ color: '#a1a1aa' }}
-                      >
-                        <ExternalLinkIcon />
-                        {t('projects.viewLive')}
-                      </a>
+                      {featured.github && (
+                        <a
+                          href={featured.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-sm font-medium transition-colors duration-200 hover:text-[#00ff41]"
+                          style={{ color: '#a1a1aa' }}
+                        >
+                          <GitHubIcon />
+                          {t('projects.viewGithub')}
+                        </a>
+                      )}
+                      {featured.live && (
+                        <a
+                          href={featured.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-sm font-medium transition-colors duration-200 hover:text-[#00ff41]"
+                          style={{ color: '#a1a1aa' }}
+                        >
+                          <ExternalLinkIcon />
+                          {t('projects.viewLive')}
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

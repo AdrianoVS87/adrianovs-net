@@ -5,10 +5,11 @@ import { motion, useInView } from 'framer-motion';
 import { useI18n } from '@/lib/i18n';
 
 const terminalLines = [
-  { cmd: '$ cat backend.txt', out: 'Java 21 · Spring Boot · Quarkus · REST APIs · Microservices · JPA/Hibernate' },
-  { cmd: '$ cat frontend.txt', out: 'Angular · React · TypeScript · Next.js · Tailwind CSS' },
-  { cmd: '$ cat devops.txt', out: 'Docker · Git · CI/CD · Linux · Redis · PostgreSQL · nginx' },
-  { cmd: '$ cat agentic.txt', out: 'Claude Code · OpenClaw · Multi-agent orchestration · Python' },
+  { cmd: '$ cat backend.txt', out: 'Java 21 · Spring Boot 3.4 · Quarkus · Kafka · Microservices · JPA/Hibernate · REST · CQRS' },
+  { cmd: '$ cat frontend.txt', out: 'React 18 · Angular · TypeScript · Next.js · Tailwind CSS · Zustand' },
+  { cmd: '$ cat database.txt', out: 'PostgreSQL · Redis · Flyway · Schema-per-service · Optimistic Locking' },
+  { cmd: '$ cat devops.txt', out: 'Docker · Docker Compose · GitHub Actions · Prometheus · Grafana · nginx · Linux' },
+  { cmd: '$ cat agentic.txt', out: 'Claude Code · OpenClaw · Multi-agent Orchestration · AI-Assisted Development' },
 ];
 
 function Terminal({ inView }: { inView: boolean }) {

@@ -64,7 +64,7 @@ export default function Education() {
           {/* Section heading */}
           <motion.h2 variants={itemVariants} className="section-heading mb-12">
             <span style={{ color: '#00ff41', fontFamily: 'var(--font-jetbrains-mono)', fontSize: '1rem' }}>
-              04.
+              05.
             </span>
             <span className="text-white ml-3">{t('education.title')}</span>
           </motion.h2>

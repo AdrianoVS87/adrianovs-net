@@ -20,9 +20,9 @@ const translations: Record<Locale, NestedStrings> = {
     },
     hero: {
       title: 'Adriano Viera dos Santos',
-      subtitle: 'Senior Java Engineer | Agentic Full Stack Developer',
-      tagline: 'I build mission-critical systems where failure is not an option.',
-      current: 'Currently architecting biometric security infrastructure for Brazil\'s statewide prison system.',
+      subtitle: 'Senior Java Engineer · Distributed Systems · Event-Driven Architecture',
+      tagline: 'I engineer backend systems that scale under pressure.',
+      current: 'Building event-driven microservices with Saga orchestration, CQRS, and real-time processing for mission-critical domains.',
       viewProjects: 'View Projects',
       contactMe: 'Contact Me',
       downloadCV: 'Download CV',
@@ -31,7 +31,7 @@ const translations: Record<Locale, NestedStrings> = {
       title: 'About',
       p1: "I'm a Senior Java Backend Engineer with 4+ years building scalable, mission-critical systems for government and healthcare sectors in Brazil. My current project: a statewide facial recognition microservice for Santa Catarina's prison management system (iPEN), processing biometric data across 50+ correctional facilities.",
       p2: "Before writing production code, I spent 4+ years training AI/ML models for Google Search and Meta's recommendation algorithms at TELUS International. I don't just use AI tools — I understand how these systems learn, fail, and improve.",
-      p3: "Now I'm an agentic full stack developer. I ship production code using Claude Code, OpenClaw, and multi-agent orchestration daily. I built hookwatch — an open-source AI agent observability platform — autonomously via AI agents on a 24/7 VPS, reviewing and merging every PR myself.",
+      p3: "I built Nexus — an event-driven e-commerce platform with Saga orchestration, CQRS, Kafka, and 100+ tests — demonstrating distributed systems mastery. I also built hookwatch, an open-source AI agent observability platform.",
       p4: "Based in Florianópolis — Brazil's #1 tech hub and global digital nomad destination. Active member of Founder Haus and the local startup ecosystem alongside international founders from 30+ countries. 3x NASA Space Apps Challenge participant.",
       p5: 'Available for remote contract work. English (Fluent) · Portuguese (Native) · GMT-3.',
       stat1: '4+ years',
@@ -79,6 +79,13 @@ const translations: Record<Locale, NestedStrings> = {
     },
     projects: {
       title: 'Projects',
+      nexus: {
+        name: 'Nexus',
+        subtitle: 'Event-Driven E-Commerce Microservices',
+        description: 'Production-grade microservices platform with Saga orchestration, CQRS, dead letter queues, JWT auth, and real-time order tracking via WebSocket. 7 Maven modules, 100+ tests, Swagger UI, Grafana dashboards.',
+        tech: 'Java 21 · Spring Boot 3.4 · Kafka · PostgreSQL · Redis · React 18 · Docker',
+        status: '53 commits, 100+ tests, full CI/CD',
+      },
       hookwatch: {
         name: 'hookwatch',
         subtitle: 'AI Agent Observability Platform',
@@ -180,9 +187,9 @@ const translations: Record<Locale, NestedStrings> = {
     },
     hero: {
       title: 'Adriano Viera dos Santos',
-      subtitle: 'Engenheiro Java Sênior | Desenvolvedor Full Stack Agêntico',
-      tagline: 'Construo sistemas de missão crítica onde falha não é uma opção.',
-      current: 'Atualmente arquitetando infraestrutura de segurança biométrica para o sistema prisional estadual do Brasil.',
+      subtitle: 'Engenheiro Java Sênior · Sistemas Distribuídos · Arquitetura Event-Driven',
+      tagline: 'Desenvolvo sistemas backend que escalam sob pressão.',
+      current: 'Construindo microsserviços event-driven com orquestração Saga, CQRS e processamento em tempo real para domínios de missão crítica.',
       viewProjects: 'Ver Projetos',
       contactMe: 'Fale Comigo',
       downloadCV: 'Baixar CV',
@@ -191,7 +198,7 @@ const translations: Record<Locale, NestedStrings> = {
       title: 'Sobre',
       p1: 'Sou Engenheiro Java Backend Sênior com 4+ anos construindo sistemas escaláveis e de missão crítica para setores governamentais e de saúde no Brasil. Meu projeto atual: um microsserviço de reconhecimento facial estadual para o sistema de gestão prisional de Santa Catarina (iPEN), processando dados biométricos em 50+ unidades prisionais.',
       p2: 'Antes de escrever código de produção, passei 4+ anos treinando modelos de IA/ML para o Google Search e algoritmos de recomendação da Meta na TELUS International. Eu não apenas uso ferramentas de IA — entendo como esses sistemas aprendem, falham e melhoram.',
-      p3: 'Agora sou um desenvolvedor full stack agêntico. Entrego código de produção usando Claude Code, OpenClaw e orquestração multi-agente diariamente. Construí o hookwatch — uma plataforma open-source de observabilidade de agentes IA — autonomamente via agentes IA em um VPS 24/7, revisando e fazendo merge de cada PR pessoalmente.',
+      p3: 'Construí o Nexus — uma plataforma de e-commerce event-driven com orquestração Saga, CQRS, Kafka e 100+ testes — demonstrando domínio de sistemas distribuídos. Também construí o hookwatch, uma plataforma open-source de observabilidade de agentes IA.',
       p4: 'Baseado em Florianópolis — o principal hub de tecnologia do Brasil e destino global de nômades digitais. Membro ativo do Founder Haus e do ecossistema local de startups ao lado de fundadores internacionais de 30+ países. Participante 3x do NASA Space Apps Challenge.',
       p5: 'Disponível para trabalho remoto por contrato. Inglês (Fluente) · Português (Nativo) · GMT-3.',
       stat1: '4+ anos',
@@ -239,6 +246,13 @@ const translations: Record<Locale, NestedStrings> = {
     },
     projects: {
       title: 'Projetos',
+      nexus: {
+        name: 'Nexus',
+        subtitle: 'Microsserviços E-Commerce Event-Driven',
+        description: 'Plataforma de microsserviços production-grade com orquestração Saga, CQRS, dead letter queues, autenticação JWT e rastreamento de pedidos em tempo real via WebSocket. 7 módulos Maven, 100+ testes, Swagger UI, dashboards Grafana.',
+        tech: 'Java 21 · Spring Boot 3.4 · Kafka · PostgreSQL · Redis · React 18 · Docker',
+        status: '53 commits, 100+ testes, CI/CD completo',
+      },
       hookwatch: {
         name: 'hookwatch',
         subtitle: 'Plataforma de Observabilidade de Agentes IA',
