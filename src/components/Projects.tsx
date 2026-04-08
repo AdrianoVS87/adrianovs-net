@@ -9,7 +9,6 @@ const projects = [
   { key: 'hookwatch', github: 'https://github.com/AdrianoVS87/hookwatch', live: 'https://hookwatch-one.vercel.app', featured: false },
   { key: 'safeOutdoor', github: null, live: 'https://safe-outdoor-app.vercel.app/', featured: false },
   { key: 'ipen', github: null, live: null, featured: false },
-  { key: 'cba', github: null, live: null, featured: false },
 ] as const;
 
 function GitHubIcon({ size = 18 }: { size?: number }) {
