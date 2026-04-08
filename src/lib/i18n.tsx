@@ -103,7 +103,7 @@ const translations: Record<Locale, NestedStrings> = {
       ipen: {
         name: 'iPEN — Facial Recognition & CBA',
         subtitle: 'Government — Santa Catarina Criminal Police',
-        description: 'Statewide biometric security system for Santa Catarina\'s prison management (iPEN). Integrates Intelbras and Hikvision facial recognition terminals and multi-face detection cameras (multiple faces per frame). Vendor/brand-agnostic architecture — any biometric hardware, zero code changes. Built as a Quarkus microservice within PAIPE/CIASC.',
+        description: 'Statewide biometric security system for Santa Catarina\'s prison management (iPEN). Integrates Intelbras and Hikvision facial recognition terminals and multi-face detection cameras (multiple faces per frame). Vendor/brand-agnostic architecture — any biometric hardware, zero code changes. Built as a Quarkus microservice for CIASC (Santa Catarina State IT Agency) via PAIPE Software (government contractor).',
         tech: 'Java 21 · Quarkus 3.x · Angular 19 · PostgreSQL · MS SQL Server · Docker',
         status: '',
       },
@@ -263,7 +263,7 @@ const translations: Record<Locale, NestedStrings> = {
       ipen: {
         name: 'iPEN — Reconhecimento Facial & CBA',
         subtitle: 'Governo — Polícia Penal de Santa Catarina',
-        description: 'Sistema de segurança biométrica estadual para gestão prisional de Santa Catarina (iPEN). Integra terminais de reconhecimento facial e câmeras com detecção multi-face (múltiplas faces por frame) da Intelbras e Hikvision. Arquitetura vendor/brand-agnostic — qualquer hardware biométrico, zero alteração de código. Microserviço Quarkus desenvolvido na PAIPE/CIASC.',
+        description: 'Sistema de segurança biométrica estadual para gestão prisional de Santa Catarina (iPEN). Integra terminais de reconhecimento facial e câmeras com detecção multi-face (múltiplas faces por frame) da Intelbras e Hikvision. Arquitetura vendor/brand-agnostic — qualquer hardware biométrico, zero alteração de código. Microserviço Quarkus desenvolvido para o CIASC (Centro de Informática e Automação de SC) via PAIPE Software (empresa terceirizada vencedora da licitação).',
         tech: 'Java 21 · Quarkus 3.x · Angular 19 · PostgreSQL · MS SQL Server · Docker',
         status: '',
       },
