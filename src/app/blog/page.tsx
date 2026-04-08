@@ -23,7 +23,7 @@ const posts: BlogPost[] = [
   },
   {
     slug: 'building-hookwatch',
-    title: 'Building hookwatch: AI Agent Observability with Spring Boot',
+    title: 'Building HookWatch: AI Agent Observability with Spring Boot',
     date: '2025-03-15',
     excerpt:
       'How I built an open-source observability platform for AI agents — autonomously via AI agents on a 24/7 VPS, reviewing and merging every PR myself.',

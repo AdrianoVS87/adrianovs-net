@@ -50,7 +50,7 @@ Distributed transactions are harder than they look — but the Saga pattern make
     `.trim(),
   },
   'building-hookwatch': {
-    title: 'Building hookwatch: AI Agent Observability with Spring Boot',
+    title: 'Building HookWatch: AI Agent Observability with Spring Boot',
     date: '2025-03-15',
     content: `
 ## The Problem
@@ -59,7 +59,7 @@ As AI agents become more autonomous, observability becomes critical. When an age
 
 ## The Architecture
 
-hookwatch ingests execution traces via webhook endpoints, stores them in PostgreSQL, and visualizes them as interactive directed graphs in a React frontend. Redis handles real-time updates.
+HookWatch ingests execution traces via webhook endpoints, stores them in PostgreSQL, and visualizes them as interactive directed graphs in a React frontend. Redis handles real-time updates.
 
 **Core Stack:**
 - Spring Boot 3.4 + Java 21 for the backend API
@@ -96,7 +96,7 @@ Active development continues. The roadmap includes cost anomaly detection, multi
 
 ---
 
-*hookwatch is open source. Check it out on [GitHub](https://github.com/AdrianoVS87/hookwatch).*
+*HookWatch is open source. Check it out on [GitHub](https://github.com/AdrianoVS87/hookwatch).*
     `.trim(),
   },
 };

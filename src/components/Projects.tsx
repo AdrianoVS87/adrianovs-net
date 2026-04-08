@@ -6,7 +6,7 @@ import { useI18n } from '@/lib/i18n';
 
 const projects = [
   { key: 'nexus', github: 'https://github.com/AdrianoVS87/nexus', live: null, featured: true },
-  { key: 'hookwatch', github: 'https://github.com/AdrianoVS87/hookwatch', live: 'https://hookwatch-one.vercel.app', featured: false },
+  { key: 'HookWatch', github: 'https://github.com/AdrianoVS87/hookwatch', live: 'https://hookwatch-one.vercel.app', featured: false },
   { key: 'safeOutdoor', github: null, live: 'https://safe-outdoor-app.vercel.app/', featured: false },
   { key: 'ipen', github: null, live: null, featured: false },
 ] as const;

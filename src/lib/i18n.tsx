@@ -31,7 +31,7 @@ const translations: Record<Locale, NestedStrings> = {
       title: 'About',
       p1: "I'm a Senior Java Backend Engineer with 4+ years building scalable, mission-critical systems for government and healthcare sectors in Brazil. My current project: a statewide facial recognition microservice for Santa Catarina's prison management system (iPEN), processing biometric data across 50+ correctional facilities.",
       p2: "Before writing production code, I spent 4+ years as a Search Engine Evaluator at TELUS International, evaluating and annotating data for Google Search and Meta's recommendation systems. This gave me deep understanding of how search ranking, relevance, and content quality work at scale.",
-      p3: "I built Nexus — an event-driven e-commerce platform with Saga orchestration, CQRS, Kafka, and 100+ tests — demonstrating distributed systems mastery. I also built hookwatch, an open-source AI agent observability platform.",
+      p3: "I built Nexus — an event-driven e-commerce platform with Saga orchestration, CQRS, Kafka, and 100+ tests — demonstrating distributed systems mastery. I also built HookWatch, an open-source AI agent observability platform.",
       p4: "Based in Florianópolis — Brazil's #1 tech hub and global digital nomad destination. Active member of Founder Haus and the local startup ecosystem alongside international founders from 30+ countries. 3x NASA Space Apps Challenge participant.",
       p5: 'Available for remote contract work. English (Fluent) · Portuguese (Native) · GMT-3.',
       stat1: '4+ years',
@@ -85,8 +85,8 @@ const translations: Record<Locale, NestedStrings> = {
         tech: 'Java 21 · Spring Boot 3.4 · Kafka · PostgreSQL · Redis · React 18 · Docker',
         status: '53 commits, 100+ tests, full CI/CD',
       },
-      hookwatch: {
-        name: 'hookwatch',
+      HookWatch: {
+        name: 'HookWatch',
         subtitle: 'AI Agent Observability Platform',
         description: 'Real-time observability for AI agents. Ingests execution traces via webhook, visualizes as interactive graphs, tracks tokens, costs, latency.',
         tech: 'Spring Boot 3.4 · Java 21 · React 18 · TypeScript · PostgreSQL 16 · Redis 7 · Docker',
@@ -190,7 +190,7 @@ const translations: Record<Locale, NestedStrings> = {
       title: 'Sobre',
       p1: 'Sou Engenheiro Java Backend Sênior com 4+ anos construindo sistemas escaláveis e de missão crítica para setores governamentais e de saúde no Brasil. Meu projeto atual: um microsserviço de reconhecimento facial estadual para o sistema de gestão prisional de Santa Catarina (iPEN), processando dados biométricos em 50+ unidades prisionais.',
       p2: 'Antes de escrever código de produção, passei 4+ anos como Search Engine Evaluator na TELUS International, avaliando e anotando dados para o Google Search e sistemas de recomendação da Meta. Isso me deu compreensão profunda de como ranking de busca, relevância e qualidade de conteúdo funcionam em escala.',
-      p3: 'Construí o Nexus — uma plataforma de e-commerce event-driven com orquestração Saga, CQRS, Kafka e 100+ testes — demonstrando domínio de sistemas distribuídos. Também construí o hookwatch, uma plataforma open-source de observabilidade de agentes IA.',
+      p3: 'Construí o Nexus — uma plataforma de e-commerce event-driven com orquestração Saga, CQRS, Kafka e 100+ testes — demonstrando domínio de sistemas distribuídos. Também construí o HookWatch, uma plataforma open-source de observabilidade de agentes IA.',
       p4: 'Baseado em Florianópolis — o principal hub de tecnologia do Brasil e destino global de nômades digitais. Membro ativo do Founder Haus e do ecossistema local de startups ao lado de fundadores internacionais de 30+ países. Participante 3x do NASA Space Apps Challenge.',
       p5: 'Disponível para trabalho remoto por contrato. Inglês (Fluente) · Português (Nativo) · GMT-3.',
       stat1: '4+ anos',
@@ -244,8 +244,8 @@ const translations: Record<Locale, NestedStrings> = {
         tech: 'Java 21 · Spring Boot 3.4 · Kafka · PostgreSQL · Redis · React 18 · Docker',
         status: '53 commits, 100+ testes, CI/CD completo',
       },
-      hookwatch: {
-        name: 'hookwatch',
+      HookWatch: {
+        name: 'HookWatch',
         subtitle: 'Plataforma de Observabilidade de Agentes IA',
         description: 'Observabilidade em tempo real para agentes IA. Ingere traces de execução via webhook, visualiza como grafos interativos, rastreia tokens, custos, latência.',
         tech: 'Spring Boot 3.4 · Java 21 · React 18 · TypeScript · PostgreSQL 16 · Redis 7 · Docker',
