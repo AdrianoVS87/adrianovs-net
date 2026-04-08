@@ -12,10 +12,10 @@ interface StatItem {
 }
 
 const statItems: StatItem[] = [
-  { value: '4+', numericTarget: 4, suffix: '+', label: 'Years Java' },
+  { value: '4+', numericTarget: 4, suffix: '+', label: 'Years SWE' },
   { value: '50+', numericTarget: 50, suffix: '+', label: 'Prison Facilities' },
-  { value: '4+', numericTarget: 4, suffix: '+', label: 'Years Search Eval' },
-  { value: '100+', numericTarget: 100, suffix: '+', label: 'Tests (Nexus)' },
+  { value: '2', numericTarget: 2, suffix: '', label: 'States (SP + SC)' },
+  { value: '3', numericTarget: 3, suffix: '', label: 'Sectors' },
 ];
 
 function AnimatedCounter({ target, suffix, inView }: { target: number; suffix: string; inView: boolean }) {
