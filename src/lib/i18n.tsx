@@ -53,7 +53,7 @@ const translations: Record<Locale, NestedStrings> = {
         period: 'Apr 2025 – Present',
         description: 'Government contractor serving CIASC (Santa Catarina State IT Agency) and DPESP (São Paulo State Public Defender\'s Office).',
         bullet1: 'Solely architected vendor-agnostic facial recognition microservice for iPEN (statewide prison management system) in Quarkus 3.33 + Angular 19.2',
-        bullet2: 'Integrates Intelbras and Hikvision facial recognition terminals + multi-face detection cameras (multiple faces per frame) — brand-agnostic, zero code changes',
+        bullet2: 'Integrates Intelbras and Hikvision facial recognition terminals + multi-face detection cameras (multiple faces per frame) — vendor-agnostic, zero code changes',
         bullet3: 'Reduced required prison officers per checkpoint from 3 to 1, eliminating ~66% manual verification overhead',
         tech: 'Java 21, Quarkus 3.33, Spring Boot, Angular 19.2, PostgreSQL, MS SQL Server, Docker, Redis',
       },
@@ -103,7 +103,7 @@ const translations: Record<Locale, NestedStrings> = {
       ipen: {
         name: 'iPEN — Facial Recognition & CBA',
         subtitle: 'Government — Santa Catarina Criminal Police',
-        description: 'Statewide biometric security system for Santa Catarina\'s prison management (iPEN). Integrates Intelbras and Hikvision facial recognition terminals and multi-face detection cameras (multiple faces per frame). Vendor/brand-agnostic architecture — any biometric hardware, zero code changes. Built as a Quarkus microservice for CIASC (Santa Catarina State IT Agency) via PAIPE Software (government contractor).',
+        description: 'Statewide biometric security system for Santa Catarina\'s prison management (iPEN). Integrates Intelbras and Hikvision facial recognition terminals and multi-face detection cameras (multiple faces per frame). Vendor-agnostic architecture — any biometric hardware, zero code changes. Built as a Quarkus microservice for CIASC (Santa Catarina State IT Agency) via PAIPE Software (government contractor).',
         tech: 'Java 21 · Quarkus 3.33 · Angular 19.2 · PostgreSQL · MS SQL Server · Docker',
         status: '',
       },
@@ -263,7 +263,7 @@ const translations: Record<Locale, NestedStrings> = {
       ipen: {
         name: 'iPEN — Reconhecimento Facial & CBA',
         subtitle: 'Governo — Polícia Penal de Santa Catarina',
-        description: 'Sistema de segurança biométrica estadual para gestão prisional de Santa Catarina (iPEN). Integra terminais de reconhecimento facial e câmeras com detecção multi-face (múltiplas faces por frame) da Intelbras e Hikvision. Arquitetura vendor/brand-agnostic — qualquer hardware biométrico, zero alteração de código. Microserviço Quarkus desenvolvido para o CIASC (Centro de Informática e Automação de SC) via PAIPE Software (empresa terceirizada vencedora da licitação).',
+        description: 'Sistema de segurança biométrica estadual para gestão prisional de Santa Catarina (iPEN). Integra terminais de reconhecimento facial e câmeras com detecção multi-face (múltiplas faces por frame) da Intelbras e Hikvision. Arquitetura vendor-agnostic — qualquer hardware biométrico, zero alteração de código. Microserviço Quarkus desenvolvido para o CIASC (Centro de Informática e Automação de SC) via PAIPE Software (empresa terceirizada vencedora da licitação).',
         tech: 'Java 21 · Quarkus 3.33 · Angular 19.2 · PostgreSQL · MS SQL Server · Docker',
         status: '',
       },
