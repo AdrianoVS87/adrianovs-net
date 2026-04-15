@@ -6,6 +6,7 @@ import { useI18n } from '@/lib/i18n';
 
 const jobs = [
   { key: 'paipe', label: 'PAIPE', bullets: 4 },
+  { key: 'phoneMast', label: 'Phone Mast', bullets: 3 },
   { key: 'healthchess', label: 'HealthChess', bullets: 3 },
   { key: 'telus', label: 'TELUS', bullets: 2 },
 ] as const;

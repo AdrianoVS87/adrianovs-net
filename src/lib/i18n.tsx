@@ -56,6 +56,16 @@ const translations: Record<Locale, NestedStrings> = {
         bullet4: 'Currently building the HR system for DPESP (São Paulo State Public Defender\'s Office) — Spring Boot + Java',
         tech: 'Java 21, Quarkus 3.33, Spring Boot, Angular 19.2, PostgreSQL, MS SQL Server, Docker, Redis',
       },
+      phoneMast: {
+        company: 'Phone Mast Advice Ltd (UK)',
+        role: 'Technical Lead',
+        period: '2025 – Present',
+        description: 'Technical lead for UK telecoms client. Led WordPress to Next.js 14 migration. Own full stack: architecture, Sanity CMS integration, Vercel deployment, Cloudflare CDN, Google Ads API. Ongoing maintenance and AI-powered content automation via OpenClaw.',
+        bullet1: 'Led complete platform migration from WordPress to Next.js 14 + Sanity CMS',
+        bullet2: 'Own architecture, SSR/ISR strategy, DNS migration, CI/CD pipeline, and Google Ads API integration',
+        bullet3: 'Ongoing maintenance with AI-powered content automation',
+        tech: 'Next.js 14, Sanity CMS, TypeScript, Vercel, Cloudflare',
+      },
       healthchess: {
         company: 'HealthChess Tecnologia',
         role: 'Java Backend Developer',
@@ -228,6 +238,16 @@ const translations: Record<Locale, NestedStrings> = {
         bullet3: 'Reduziu oficiais prisionais necessários por checkpoint de 3 para 1, eliminando ~66% da verificação manual',
         bullet4: 'Atualmente desenvolvendo sistema de RH da DPESP (Defensoria Pública do Estado de São Paulo) — Spring Boot + Java',
         tech: 'Java 21, Quarkus 3.33, Spring Boot, Angular 19.2, PostgreSQL, MS SQL Server, Docker, Redis',
+      },
+      phoneMast: {
+        company: 'Phone Mast Advice Ltd (UK)',
+        role: 'Líder Técnico',
+        period: '2025 – Presente',
+        description: 'Líder técnico para cliente de telecomunicações do Reino Unido. Liderou migração de WordPress para Next.js 14. Responsável por toda a stack: arquitetura, integração Sanity CMS, deploy Vercel, CDN Cloudflare, Google Ads API. Manutenção contínua e automação de conteúdo via OpenClaw.',
+        bullet1: 'Liderou migração completa da plataforma de WordPress para Next.js 14 + Sanity CMS',
+        bullet2: 'Responsável pela arquitetura, estratégia SSR/ISR, migração DNS, pipeline CI/CD e integração Google Ads API',
+        bullet3: 'Manutenção contínua com automação de conteúdo via IA',
+        tech: 'Next.js 14, Sanity CMS, TypeScript, Vercel, Cloudflare',
       },
       healthchess: {
         company: 'HealthChess Tecnologia',
