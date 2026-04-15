@@ -17,11 +17,11 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://adrianovs.net'),
   title: {
-    default: 'Adriano Viera dos Santos — Senior Java Engineer',
+    default: 'Adriano Viera dos Santos — Senior Full-stack Developer',
     template: '%s | Adriano Viera dos Santos',
   },
   description:
-    'Senior Java Backend Engineer building mission-critical systems for government and healthcare. Specializing in Spring Boot, Quarkus, and agentic full stack development.',
+    'Senior Full-stack Developer specializing in Java, Spring Boot, and AI-powered workflow automation. 4+ years building government systems. Available for remote work.',
   keywords: [
     'Java Developer',
     'Senior Software Engineer',
@@ -43,16 +43,16 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://adrianovs.net',
     siteName: 'Adriano Viera dos Santos',
-    title: 'Adriano Viera dos Santos — Senior Java Engineer',
+    title: 'Adriano Viera dos Santos — Senior Full-stack Developer',
     description:
-      'Senior Java Backend Engineer building mission-critical systems for government and healthcare.',
+      'Senior Full-stack Developer specializing in Java, Spring Boot, and AI-powered workflow automation. 4+ years building government systems. Available for remote work.',
     images: [{ url: '/images/og.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Adriano Viera dos Santos — Senior Java Engineer',
+    title: 'Adriano Viera dos Santos — Senior Full-stack Developer',
     description:
-      'Senior Java Backend Engineer building mission-critical systems for government and healthcare.',
+      'Senior Full-stack Developer specializing in Java, Spring Boot, and AI-powered workflow automation. 4+ years building government systems. Available for remote work.',
     images: ['/images/og.png'],
   },
   robots: {
@@ -77,7 +77,7 @@ export default function RootLayout({
               '@type': 'Person',
               name: 'Adriano Viera dos Santos',
               url: 'https://adrianovs.net',
-              jobTitle: 'Senior Java Engineer',
+              jobTitle: 'Senior Full-stack Developer',
               worksFor: { '@type': 'Organization', name: 'PAIPE Software' },
               address: {
                 '@type': 'PostalAddress',
