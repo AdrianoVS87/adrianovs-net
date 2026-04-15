@@ -160,16 +160,6 @@ const translations: Record<Locale, NestedStrings> = {
         institution: 'Founder Haus, Florianópolis',
         period: '2022, 2023, 2024',
       },
-      ipe: {
-        name: 'IPÊ Village 2026 — Architect Tier',
-        institution: 'Popup city experiment, Florianópolis',
-        period: 'Apr–May 2026',
-      },
-      web3: {
-        name: 'Web3 Bootcamp (PSP Borderless Coding)',
-        institution: 'Crypto Valley certificate track',
-        period: 'Currently enrolled',
-      },
     },
     contact: {
       title: 'Contact',
@@ -342,16 +332,6 @@ const translations: Record<Locale, NestedStrings> = {
         name: '3x NASA Space Apps Challenge',
         institution: 'Founder Haus, Florianópolis',
         period: '2022, 2023, 2024',
-      },
-      ipe: {
-        name: 'IPÊ Village 2026 — Tier Arquiteto',
-        institution: 'Experimento de cidade popup, Florianópolis',
-        period: 'Abr–Mai 2026',
-      },
-      web3: {
-        name: 'Bootcamp Web3 (PSP Borderless Coding)',
-        institution: 'Certificação Crypto Valley',
-        period: 'Atualmente matriculado',
       },
     },
     contact: {

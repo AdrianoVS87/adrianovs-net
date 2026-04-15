@@ -23,18 +23,6 @@ const items = [
     badge: '3x',
     glowBadge: false,
   },
-  {
-    key: 'ipe',
-    icon: '🌱',
-    badge: 'Architect Tier',
-    glowBadge: true,
-  },
-  {
-    key: 'web3',
-    icon: '⛓️',
-    badge: 'Current',
-    glowBadge: false,
-  },
 ] as const;
 
 const containerVariants = {
