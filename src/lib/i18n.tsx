@@ -158,7 +158,7 @@ const translations: Record<Locale, NestedStrings> = {
       nasa: {
         name: 'NASA Space Apps Challenge — Participant (2023, 2024, 2025)',
         institution: 'Founder Haus, Florianópolis',
-        period: '2022, 2023, 2024',
+        period: '2023, 2024, 2025',
       },
     },
     contact: {
@@ -331,7 +331,7 @@ const translations: Record<Locale, NestedStrings> = {
       nasa: {
         name: 'NASA Space Apps Challenge — Participant (2023, 2024, 2025)',
         institution: 'Founder Haus, Florianópolis',
-        period: '2022, 2023, 2024',
+        period: '2023, 2024, 2025',
       },
     },
     contact: {
