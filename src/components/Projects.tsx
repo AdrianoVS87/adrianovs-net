@@ -5,7 +5,9 @@ import { motion, useInView } from 'framer-motion';
 import { useI18n } from '@/lib/i18n';
 
 const projects = [
-  { key: 'nexus', github: 'https://github.com/AdrianoVS87/nexus', live: null, featured: true },
+  { key: 'openclaw', github: null, live: null, featured: true },
+  { key: 'nexus', github: 'https://github.com/AdrianoVS87/nexus', live: null, featured: false },
+  { key: 'phoneMast', github: null, live: 'https://phonemastadvice.co.uk', featured: false },
   { key: 'HookWatch', github: 'https://github.com/AdrianoVS87/hookwatch', live: 'https://hookwatch-one.vercel.app', featured: false },
   { key: 'safeOutdoor', github: null, live: 'https://safe-outdoor-app.vercel.app/', featured: false },
   { key: 'ipen', github: null, live: null, featured: false },
@@ -58,7 +60,7 @@ function BrowserMockup() {
             border: '1px solid rgba(255,255,255,0.06)',
           }}
         >
-          localhost:8080/swagger-ui.html
+          openclaw — agent dashboard
         </div>
       </div>
 
@@ -66,16 +68,16 @@ function BrowserMockup() {
       <div className="p-4 font-mono text-xs space-y-2 flex-1">
         <div className="flex items-center gap-2 mb-3">
           <div className="w-2 h-2 rounded-full bg-[#00ff41] animate-pulse" />
-          <span style={{ color: '#00ff41' }}>nexus</span>
-          <span style={{ color: '#6e7681' }}>— order-service</span>
+          <span style={{ color: '#00ff41' }}>openclaw</span>
+          <span style={{ color: '#6e7681' }}>— workflow engine</span>
         </div>
         <div className="space-y-1.5">
-          <p><span style={{ color: '#00ff41' }}>$</span> <span style={{ color: '#c9d1d9' }}>POST /api/v1/orders</span></p>
-          <p style={{ color: '#6e7681' }}>  {'{'}  userId: &quot;550e...&quot;, items: [{'{'}...{'}'}]  {'}'}</p>
-          <p><span style={{ color: '#58a6ff' }}>✓</span> <span style={{ color: '#8b949e' }}>Order created · PAYMENT_REQUESTED · 4ms</span></p>
-          <p><span style={{ color: '#00ff41' }}>$</span> <span style={{ color: '#c9d1d9' }}>PaymentCompleted → InventoryReserved</span></p>
-          <p style={{ color: '#6e7681' }}>  Saga confirmed · orderId: d290f1ee</p>
-          <p><span style={{ color: '#d29922' }}>◆</span> <span style={{ color: '#8b949e' }}>WebSocket: CONFIRMED broadcast</span></p>
+          <p><span style={{ color: '#00ff41' }}>$</span> <span style={{ color: '#c9d1d9' }}>NEW email → triage</span></p>
+          <p style={{ color: '#6e7681' }}>  priority: HIGH · client: acme-corp</p>
+          <p><span style={{ color: '#58a6ff' }}>✓</span> <span style={{ color: '#8b949e' }}>Code generated · tests passed · 12s</span></p>
+          <p><span style={{ color: '#00ff41' }}>$</span> <span style={{ color: '#c9d1d9' }}>Deploy → awaiting approval</span></p>
+          <p style={{ color: '#6e7681' }}>  human-gate: approved by adriano</p>
+          <p><span style={{ color: '#d29922' }}>◆</span> <span style={{ color: '#8b949e' }}>Deployed to production · audit logged</span></p>
         </div>
       </div>
     </div>

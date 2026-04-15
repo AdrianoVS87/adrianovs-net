@@ -78,6 +78,13 @@ const translations: Record<Locale, NestedStrings> = {
     },
     projects: {
       title: 'Projects',
+      openclaw: {
+        name: 'OpenClaw',
+        subtitle: 'AI Workflow Automation System (Production)',
+        description: 'Production system running 24/7 that automates real business operations. Receives client requests via email, triages by priority, generates code changes, runs CI/CD pipeline, deploys to production — all with human approval. Role-based agent orchestration with specialized workers, multi-model routing, and full audit trail.',
+        tech: 'Python · Claude Code · Codex CLI · Gmail API · Git · Vercel · PostgreSQL · Redis',
+        status: 'Running in production — manages real client operations daily',
+      },
       nexus: {
         name: 'Nexus',
         subtitle: 'Event-Driven E-Commerce Microservices',
@@ -91,6 +98,13 @@ const translations: Record<Locale, NestedStrings> = {
         description: 'Real-time observability for AI agents. Ingests execution traces via webhook, visualizes as interactive graphs, tracks tokens, costs, latency.',
         tech: 'Spring Boot 3.4 · Java 21 · React 18 · TypeScript · PostgreSQL 16 · Redis 7 · Docker',
         status: 'Active development, 100+ commits',
+      },
+      phoneMast: {
+        name: 'Phone Mast Advice',
+        subtitle: 'UK Telecoms Platform — Technical Lead',
+        description: 'Led complete platform migration from WordPress to modern stack for a UK telecoms surveying firm. Owned architecture, SSR/ISR strategy, DNS migration, CI/CD pipeline, and Google Ads API integration. In production under ongoing maintenance.',
+        tech: 'Next.js 14 · Sanity CMS · TypeScript · Vercel · Cloudflare · Google Ads API',
+        status: 'In production — ongoing maintenance',
       },
       safeOutdoor: {
         name: 'Safe Outdoor App',
@@ -237,6 +251,13 @@ const translations: Record<Locale, NestedStrings> = {
     },
     projects: {
       title: 'Projetos',
+      openclaw: {
+        name: 'OpenClaw',
+        subtitle: 'Sistema de Automação de Workflow com IA (Produção)',
+        description: 'Sistema em produção rodando 24/7 que automatiza operações reais de negócio. Recebe requisições de clientes via e-mail, faz triagem por prioridade, gera alterações de código, executa pipeline CI/CD, faz deploy em produção — tudo com aprovação humana. Orquestração de agentes baseada em papéis com workers especializados, roteamento multi-modelo e trilha de auditoria completa.',
+        tech: 'Python · Claude Code · Codex CLI · Gmail API · Git · Vercel · PostgreSQL · Redis',
+        status: 'Rodando em produção — gerencia operações reais de clientes diariamente',
+      },
       nexus: {
         name: 'Nexus',
         subtitle: 'Microsserviços E-Commerce Event-Driven',
@@ -250,6 +271,13 @@ const translations: Record<Locale, NestedStrings> = {
         description: 'Observabilidade em tempo real para agentes IA. Ingere traces de execução via webhook, visualiza como grafos interativos, rastreia tokens, custos, latência.',
         tech: 'Spring Boot 3.4 · Java 21 · React 18 · TypeScript · PostgreSQL 16 · Redis 7 · Docker',
         status: 'Desenvolvimento ativo, 100+ commits',
+      },
+      phoneMast: {
+        name: 'Phone Mast Advice',
+        subtitle: 'Plataforma de Telecomunicações UK — Líder Técnico',
+        description: 'Liderou migração completa da plataforma de WordPress para stack moderno para empresa de telecomunicações do Reino Unido. Responsável pela arquitetura, estratégia SSR/ISR, migração DNS, pipeline CI/CD e integração com Google Ads API. Em produção com manutenção contínua.',
+        tech: 'Next.js 14 · Sanity CMS · TypeScript · Vercel · Cloudflare · Google Ads API',
+        status: 'Em produção — manutenção contínua',
       },
       safeOutdoor: {
         name: 'Safe Outdoor App',
