@@ -62,12 +62,12 @@ function highlight(text: string) {
   const keywords = [
     'mission-critical',
     'facial recognition',
-    'Google Search',
-    'Claude Code, OpenClaw',
-    'Claude Code',
     'OpenClaw',
+    'AI-powered workflow automation',
+    'vendor-agnostic',
     'missão crítica',
     'reconhecimento facial',
+    'vendor-agnóstico',
   ];
   let result = text;
   keywords.forEach((kw) => {
