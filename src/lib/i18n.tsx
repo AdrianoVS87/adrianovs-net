@@ -118,7 +118,7 @@ const translations: Record<Locale, NestedStrings> = {
       },
       safeOutdoor: {
         name: 'Safe Outdoor App',
-        subtitle: 'NASA Space Apps Challenge 2024',
+        subtitle: 'NASA Space Apps Challenge — Participant',
         description: 'Satellite data visualization app built nearly solo. Team Orn Space at Founder Haus Florianópolis.',
         tech: '',
         status: '',
@@ -156,7 +156,7 @@ const translations: Record<Locale, NestedStrings> = {
         note: 'Selected from 150,000+ applicants, 2,500 scholarships. Co-created by Mercado Libre (NYSE: MELI) and Globant (NYSE: GLOB).',
       },
       nasa: {
-        name: '3x NASA Space Apps Challenge',
+        name: 'NASA Space Apps Challenge — Participant (2023, 2024, 2025)',
         institution: 'Founder Haus, Florianópolis',
         period: '2022, 2023, 2024',
       },
@@ -291,7 +291,7 @@ const translations: Record<Locale, NestedStrings> = {
       },
       safeOutdoor: {
         name: 'Safe Outdoor App',
-        subtitle: 'NASA Space Apps Challenge 2024',
+        subtitle: 'NASA Space Apps Challenge — Participant',
         description: 'App de visualização de dados de satélite construído quase solo. Equipe Orn Space no Founder Haus Florianópolis.',
         tech: '',
         status: '',
@@ -329,7 +329,7 @@ const translations: Record<Locale, NestedStrings> = {
         note: 'Selecionado entre 150.000+ candidatos, 2.500 bolsas. Co-criado por Mercado Libre (NYSE: MELI) e Globant (NYSE: GLOB).',
       },
       nasa: {
-        name: '3x NASA Space Apps Challenge',
+        name: 'NASA Space Apps Challenge — Participant (2023, 2024, 2025)',
         institution: 'Founder Haus, Florianópolis',
         period: '2022, 2023, 2024',
       },
