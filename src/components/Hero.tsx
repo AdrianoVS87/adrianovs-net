@@ -107,7 +107,7 @@ export default function Hero() {
               className="text-xl md:text-2xl font-medium leading-snug"
               style={{ color: '#a1a1aa' }}
             >
-              I build systems where failure is not an option.
+              I build AI-powered systems that solve real business problems.
             </motion.p>
 
             {/* Typing animation */}
