@@ -27,7 +27,7 @@ This kind of production thinking — constraints, audit trails, compensation flo
 
 The future of AI in business isn't replacing developers. It's giving them leverage. And Java developers who understand both worlds are rare.
 
-If you want to see what this looks like in practice, [Toptal's network of elite Java engineers](https://www.toptal.com/java) is a great place to find the kind of builders who combine deep backend expertise with modern AI tooling. That's where I want to be.
+If you want to see what this looks like in practice, [Toptal's network of elite Java engineers](https://www.toptal.com/developers/java) is a great place to find the kind of builders who combine deep backend expertise with modern AI tooling. That's where I want to be.
 
 ---
 
