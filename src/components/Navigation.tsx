@@ -95,6 +95,15 @@ export default function Navigation() {
               </a>
             ))}
 
+            {/* Blog link */}
+            <a
+              href="/blog"
+              className="nav-link text-xs font-medium transition-colors duration-200 pb-1 text-zinc-400 hover:text-zinc-100"
+              style={{ fontFamily: 'var(--font-jetbrains-mono)' }}
+            >
+              05. Blog
+            </a>
+
             {/* Resume button */}
             <a
               href="/cv.pdf"
@@ -165,6 +174,14 @@ export default function Navigation() {
                 {label}
               </a>
             ))}
+            <a
+              href="/blog"
+              onClick={() => setMobileOpen(false)}
+              className="text-2xl font-medium text-zinc-300 hover:text-[#00ff41] transition-colors duration-200"
+              style={{ fontFamily: 'var(--font-jetbrains-mono)' }}
+            >
+              05. Blog
+            </a>
             <a
               href="/cv.pdf"
               onClick={() => setMobileOpen(false)}

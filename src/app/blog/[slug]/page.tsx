@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -5,7 +6,34 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
-const postsContent: Record<string, { title: string; date: string; content: string }> = {
+const postsContent: Record<string, { title: string; date: string; readingTime?: string; content: string }> = {
+  'java-ai-agent-underrated-stack-2026': {
+    title: 'Why Java + AI Agent Infrastructure Is the Most Underrated Stack of 2026',
+    date: '2026-04-19',
+    readingTime: '3 min read',
+    content: `For the past year, I've been running an autonomous AI agent system in production that handles real business operations for a UK telecoms client. It reads emails from non-technical business managers, classifies requests by priority, generates code changes, runs CI/CD pipelines, and deploys to production — all with human approval as the safety gate. It reduced turnaround time from days to under 2 hours.
+
+I built it on top of a Java backend with Spring Boot. And I think this combination — enterprise Java with AI agent orchestration — is the most underrated stack in software engineering right now.
+
+Here's why.
+
+Most AI agent frameworks live in the Python world: LangChain, CrewAI, AutoGen. They're great for prototyping. But when you need production-grade reliability, strict type safety, battle-tested dependency injection, and integration with existing enterprise systems, Python starts to show cracks.
+
+Meanwhile, thousands of Fortune 500 companies run on Java. Schools, hospitals, banks, government — all of them are quietly asking: "How do we bring AI into what we already have?" Bolting on Python microservices is one answer. Integrating AI natively into Spring Boot with Spring AI is a much better one.
+
+In my work, I built a self-assembling agent system that orchestrates specialized workers: email analysts, code engineers, QA reviewers, deploy operators. Each agent has typed capabilities and safety constraints. A QA agent can't write code. A code agent can't deploy without QA passing. The orchestrator handles ambiguity through confidence thresholds — low confidence always escalates to a human.
+
+This kind of production thinking — constraints, audit trails, compensation flows, human approval gates — is exactly what Java engineers have been doing for decades. We just didn't call it "agents." We called it "enterprise integration patterns."
+
+The future of AI in business isn't replacing developers. It's giving them leverage. And Java developers who understand both worlds are rare.
+
+If you want to see what this looks like in practice, [Toptal's network of elite Java engineers](https://www.toptal.com/java) is a great place to find the kind of builders who combine deep backend expertise with modern AI tooling. That's where I want to be.
+
+---
+
+*— Adriano Viera dos Santos*
+*Senior Full-stack Developer | Java · Spring Boot · AI Workflow Automation*`,
+  },
   'building-nexus': {
     title: 'Building Nexus: Event-Driven Microservices with Saga Orchestration',
     date: '2026-04-08',
@@ -101,6 +129,37 @@ Active development continues. The roadmap includes cost anomaly detection, multi
   },
 };
 
+function renderInlineLinks(text: string): React.ReactNode {
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = linkRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    parts.push(
+      <a
+        key={match.index}
+        href={match[2]}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[#60a5fa] hover:underline"
+      >
+        {match[1]}
+      </a>
+    );
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : text;
+}
+
 export async function generateStaticParams() {
   return Object.keys(postsContent).map((slug) => ({ slug }));
 }
@@ -109,9 +168,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = postsContent[slug];
   if (!post) return { title: 'Post Not Found' };
+  const description = post.content.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').slice(0, 160);
   return {
     title: post.title,
-    description: post.content.slice(0, 160),
+    description,
+    openGraph: {
+      title: post.title,
+      description,
+      type: 'article',
+      publishedTime: post.date,
+      authors: ['Adriano Viera dos Santos'],
+      url: `https://adrianovs.net/blog/${slug}`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description,
+    },
   };
 }
 
@@ -143,8 +216,16 @@ export default async function BlogPost({ params }: Props) {
         </Link>
 
         <header className="mt-8 mb-12">
-          <time className="text-[#737373] text-sm">{post.date}</time>
-          <h1 className="text-3xl md:text-4xl font-bold mt-2">{post.title}</h1>
+          <div className="flex items-center gap-3 text-[#737373] text-sm">
+            <time>{post.date}</time>
+            {post.readingTime && (
+              <>
+                <span>·</span>
+                <span>{post.readingTime}</span>
+              </>
+            )}
+          </div>
+          <h1 className="text-3xl md:text-4xl font-bold mt-2 leading-tight">{post.title}</h1>
         </header>
 
         <div className="prose prose-invert max-w-none prose-headings:text-[#e5e5e5] prose-p:text-[#a3a3a3] prose-strong:text-[#e5e5e5] prose-a:text-[#60a5fa] prose-code:text-[#60a5fa] prose-li:text-[#a3a3a3] prose-hr:border-[#262626]">
@@ -177,9 +258,10 @@ export default async function BlogPost({ params }: Props) {
               return <hr key={i} className="border-[#262626] my-8" />;
             }
             if (block.startsWith('*') && block.endsWith('*')) {
-              return <p key={i} className="text-[#737373] italic mt-4">{block.slice(1, -1)}</p>;
+              const text = block.slice(1, -1);
+              return <p key={i} className="text-[#737373] italic mt-4">{renderInlineLinks(text)}</p>;
             }
-            return <p key={i} className="text-[#a3a3a3] leading-relaxed my-4">{block}</p>;
+            return <p key={i} className="text-[#a3a3a3] leading-relaxed my-4" style={{ lineHeight: 1.7 }}>{renderInlineLinks(block)}</p>;
           })}
         </div>
       </article>

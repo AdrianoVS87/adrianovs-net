@@ -15,6 +15,13 @@ interface BlogPost {
 
 const posts: BlogPost[] = [
   {
+    slug: 'java-ai-agent-underrated-stack-2026',
+    title: 'Why Java + AI Agent Infrastructure Is the Most Underrated Stack of 2026',
+    date: '2026-04-19',
+    excerpt:
+      'For the past year, I\'ve been running an autonomous AI agent system in production that handles real business operations for a UK telecoms client. I built it on Java + Spring Boot.',
+  },
+  {
     slug: 'building-nexus',
     title: 'Building Nexus: Event-Driven Microservices with Saga Orchestration',
     date: '2026-04-08',
